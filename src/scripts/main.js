@@ -7,11 +7,13 @@ const dashboard = document.querySelector("#dashboard")
 
 const render = () => {
     fetchEvents()
-    .then(() => fetchArticles())
+    .then(
+        () => 
     {
             dashboard.innerHTML = Nutshell()
             
         }
+    )
 }
 
 dashboard.addEventListener(

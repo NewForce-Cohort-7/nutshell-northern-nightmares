@@ -20,8 +20,8 @@ export const Nutshell = () => {
       </section>
       <section class="currentArticles">
       ${Articles()}
-      </section>
-      `
+      </section>`
+      
   
       // Render all your UI components here
 }

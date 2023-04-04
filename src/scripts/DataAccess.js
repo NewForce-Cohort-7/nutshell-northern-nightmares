@@ -21,6 +21,38 @@ export const fetchEvents = () => {
                 applicationState.events = data}
         )
             }
+            
+            export const getEvents = () => {
+    return applicationState.events.map(event => ({
+        ...event
+    }))
+}
+
+export const sendEvents = (userServiceRequest) => {
+    const fetchOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+       body: JSON.stringify(userServiceRequest) 
+    }
+    return fetch(`${API}/events`, fetchOptions)
+    .then(response => response.json())
+    .then(() => { dashboard.dispatchEvent(new CustomEvent("stateChanged"))
+
+    })
+}
+export const deleteEvents = (id)=> {
+    const dashboard = document.querySelector("#dashboard")
+    return fetch(`${API}/events/${id}`, { method: "DELETE" })
+    .then(
+        () => {
+            dashboard.dispatchEvent(new CustomEvent("stateChanged"))
+        }
+    )
+}
+
+
 //get exports
 export const getArticles = () => {
     return applicationState.articles.map(article => ({...article}))
@@ -61,11 +93,7 @@ export const fetchArticles = () => {
         )
 }
 
-export const getEvents = () => {
-    return applicationState.events.map(event => ({
-        ...event
-    }))
-}
+
 
 export const fetchMessages = () => {
     return fetch(`${API}/messages`)
@@ -79,20 +107,6 @@ export const fetchMessages = () => {
         )
 }
 
-export const sendEvents = (userServiceRequest) => {
-    const fetchOptions = {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-       body: JSON.stringify(userServiceRequest) 
-    }
-    return fetch(`${API}/events`, fetchOptions)
-    .then(response => response.json())
-    .then(() => { dashboard.dispatchEvent(new CustomEvent("stateChanged"))
-
-    })
-}
 
 //Send Exports
 export const sendArticle = (newUserArticle) => {
@@ -118,11 +132,8 @@ export const getCompletions = () => {
 }
 
 
-export const deleteEvents = (id) => {
-    return fetch(`${API}/events/${id}`, { method: "DELETE" })
-        
-    }
 
+    
 
    
 
