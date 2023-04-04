@@ -20,6 +20,5 @@ dashboard.addEventListener(
     "stateChanged",
     customEvent => {
         render()
-    })
-render()
-
+    }
+)
