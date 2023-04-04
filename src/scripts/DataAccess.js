@@ -13,20 +13,6 @@ const applicationState =
 
 const API = "http://localhost:8088"
 
-export const fetchEvents = () => {
-    return fetch(`${API}/events`)
-        .then(response => response.json())
-        .then(
-            (data) => {
-                applicationState.events = data}
-        )
-            }
-            
-            export const getEvents = () => {
-    return applicationState.events.map(event => ({
-        ...event
-    }))
-}
 
 export const sendEvents = (userServiceRequest) => {
     const fetchOptions = {
@@ -34,13 +20,13 @@ export const sendEvents = (userServiceRequest) => {
         headers: {
             "Content-Type": "application/json"
         },
-       body: JSON.stringify(userServiceRequest) 
+        body: JSON.stringify(userServiceRequest) 
     }
     return fetch(`${API}/events`, fetchOptions)
     .then(response => response.json())
     .then(() => { dashboard.dispatchEvent(new CustomEvent("stateChanged"))
-
-    })
+    
+})
 }
 export const deleteEvents = (id)=> {
     const dashboard = document.querySelector("#dashboard")
@@ -49,80 +35,96 @@ export const deleteEvents = (id)=> {
         () => {
             dashboard.dispatchEvent(new CustomEvent("stateChanged"))
         }
-    )
-}
-
-
-//get exports
-export const getArticles = () => {
-    return applicationState.articles.map(article => ({...article}))
-}
-
-export const getMessages = () => {
-    return applicationState.messages.map(message => ({...message}))
-}
-
-export const getReadArticles = (state) => {
+        )
+    }
     
-    //sort readArticles based on dates read
-    const sortedReadArticles = state.readArticles.map(readArticle =>({...readArticle})).sort((a, b) => a.date_read - b.date_read)
+    
+    //get exports
+    export const getArticles = () => {
+        return applicationState.articles.map(article => ({...article}))
+    }
+    
+    export const getMessages = () => {
+        return applicationState.messages.map(message => ({...message}))
+    }
 
-    //map the current articles
-    const articles = state.articles.map(article => ({...article}))
-
-    //filter and match the current articles witht he read articles based on ids
-    const readArticles = sortedReadArticles.filter(singleReadArticle => { return articles.some(singleArticle => singleArticle.id === singleReadArticle.articleId)})
-
-    //return filtered list of read articles
-    return readArticles
-}
-
-export const getState = () => {
-    return ({...applicationState})
-}
-
-//fetch exports
-export const fetchArticles = () => {
-    return fetch(`${API}/articles`)
+    export const getEvents = () => {
+        return applicationState.events.map(event => ({
+            ...event}))
+    }
+    
+    export const getReadArticles = (state) => {
+        
+        //sort readArticles based on dates read
+        const sortedReadArticles = state.readArticles.map(readArticle =>({...readArticle})).sort((a, b) => a.date_read - b.date_read)
+        
+        //map the current articles
+        const articles = state.articles.map(article => ({...article}))
+        
+        //filter and match the current articles witht he read articles based on ids
+        const readArticles = sortedReadArticles.filter(singleReadArticle => { return articles.some(singleArticle => singleArticle.id === singleReadArticle.articleId)})
+        
+        //return filtered list of read articles
+        return readArticles
+    }
+    
+    export const getState = () => {
+        return ({...applicationState})
+    }
+    
+    //fetch exports
+    export const fetchArticles = () => {
+        return fetch(`${API}/articles`)
         .then(response => response.json())
         .then(
             (data) => {
                 // Store the external state in application state
                 applicationState.articles = data
             }
-        )
-}
-
-
-
-export const fetchMessages = () => {
-    return fetch(`${API}/messages`)
+            )
+        }
+        
+        
+        
+    export const fetchMessages = () => {
+        return fetch(`${API}/messages`)
         .then(response => response.json())
         .then(
             (data) => {
-                // Store the external state in application state
-                applicationState.messages = data
+                    // Store the external state in application state
+                    applicationState.messages = data
+                }
+                )
             }
             
-        )
-}
-
-
-//Send Exports
-export const sendArticle = (newUserArticle) => {
-    const fetchOptions = {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-       body: JSON.stringify(newUserArticle) 
-    }
-    return fetch(`${API}/articles`, fetchOptions)
-    .then(response => response.json())
-    .then(() => {
-        dashboard.dispatchEvent(new CustomEvent("stateChanged"))
-    }) 
-}
+    export const fetchEvents = () => {
+        return fetch(`${API}/events`)
+            .then(response => response.json())
+            .then(
+                (data) => {
+                    applicationState.events = data
+                    }
+                    )
+                }
+                        
+                      
+            
+    //Send Exports
+    export const sendArticle = (newUserArticle) => {
+        const fetchOptions = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+                    },
+            body: JSON.stringify(newUserArticle) 
+        }
+        return fetch(`${API}/articles`, fetchOptions)
+            .then(response => response.json())
+            .then(() => {
+            dashboard.dispatchEvent(new CustomEvent("stateChanged"))
+            }
+            ) 
+        }
 
 
 export const getCompletions = () => {
@@ -130,13 +132,6 @@ export const getCompletions = () => {
         ...completion
     }))
 }
-
-
-
-    
-
-   
-
 
 export const sendMessage = (newUserMessage) => {
     const fetchOptions = {

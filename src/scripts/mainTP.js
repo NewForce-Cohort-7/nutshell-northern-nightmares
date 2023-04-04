@@ -11,7 +11,7 @@ const render = () => {
     .then(
         () => 
     {
-            dashboard.innerHTML = Nutshell()
+            dashboard.innerHTML = ""
             
         }
     )
