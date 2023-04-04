@@ -27,7 +27,7 @@ export const getArticles = () => {
 }
 
 export const getMessages = () => {
-    return applicationState.articles.map(message => ({...message}))
+    return applicationState.messages.map(message => ({...message}))
 }
 
 export const getReadArticles = (state) => {
@@ -80,7 +80,19 @@ export const fetchMessages = () => {
 }
 
 export const sendEvents = (userServiceRequest) => {
+    const fetchOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+       body: JSON.stringify(userServiceRequest) 
+    }
+    return fetch(`${API}/events`, fetchOptions)
+    .then(response => response.json())
+    .then(() => { dashboard.dispatchEvent(new CustomEvent("stateChanged"))
 
+    })
+}
 
 //Send Exports
 export const sendArticle = (newUserArticle) => {
@@ -91,11 +103,11 @@ export const sendArticle = (newUserArticle) => {
         },
        body: JSON.stringify(newUserArticle) 
     }
-    return fetch(`${API}/events`, fetchOptions)
+    return fetch(`${API}/articles`, fetchOptions)
     .then(response => response.json())
-    .then(() => { dashboard.dispatchEvent(new CustomEvent("stateChanged"))
-
-    })
+    .then(() => {
+        dashboard.dispatchEvent(new CustomEvent("stateChanged"))
+    }) 
 }
 
 
@@ -112,12 +124,8 @@ export const deleteEvents = (id) => {
     }
 
 
-    return fetch(`${API}/articles`, fetchOptions)
-    .then(response => response.json())
-    .then(() => {
-        dashboard.dispatchEvent(new CustomEvent("stateChanged"))
-    })
-}
+   
+
 
 export const sendMessage = (newUserMessage) => {
     const fetchOptions = {
