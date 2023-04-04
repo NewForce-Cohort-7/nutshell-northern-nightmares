@@ -16,6 +16,8 @@ const render = () => {
     )
 }
 
+render()
+
 dashboard.addEventListener(
     "stateChanged",
     customEvent => {
