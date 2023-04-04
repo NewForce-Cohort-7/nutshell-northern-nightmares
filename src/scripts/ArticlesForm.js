@@ -2,8 +2,18 @@ import { sendArticle } from "./DataAccess.js";
 const dashboard = document.querySelector("#dashboard")
 
 //
+export const buttonForForm =() => {
+    let html = `
+    <div>
+    <button id="newArticle">New Article</button>
+    </div>
+    `
+    return html
+      
+}
 export const articleForm = () => {
     let html =`
+    <div id="completeArticleForm" style = "display: none;">
     <div class="article">
     <div><label class="label" for="articleTitle">Title</label></div>
     <input type="text" name="articleTitle" class="input"/>
@@ -19,7 +29,10 @@ export const articleForm = () => {
     <input type="text" name="articleURL" class="input" />
     </div>
 
+    <div class="savebutton">
     <button class="button" id="submitArticle">Submit New Article</button>
+    </div>
+    </div>
     `
     return html
     
@@ -45,4 +58,14 @@ dashboard.addEventListener("click", clickEvent => {
 
         dashboard.dispatchEvent(new CustomEvent("stateChanged"))
     }
+})
+
+//popup form
+dashboard.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "newArticle") {
+        console.log("It clicked")
+        
+        const articleForm = document.querySelector("#completeArticleForm")
+        articleForm.style.display = "block"
+        }
 })
