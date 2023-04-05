@@ -7,6 +7,7 @@ const dashboard = document.querySelector("#dashboard")
 
 const render = () => {
     fetchEvents()
+    fetchArticles()
     .then(
         () => 
     {
