@@ -1,7 +1,7 @@
 import {eventForm,Events} from "./Events.js"
 import { articleForm, buttonForForm} from "./ArticlesForm.js"
 import { Articles } from "./Articles.js"
-import { Tasks } from "./tasks.js"
+import { Tasks } from "./Tasks.js"
 import { taskForm } from "./TasksForm.js"
 
 export const Nutshell = () => {
