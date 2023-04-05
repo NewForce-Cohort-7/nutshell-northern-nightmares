@@ -6,8 +6,6 @@ const dashboard = document.querySelector("#dashboard")
 const navbar = document.querySelector("#navbar")
 const render = () => {
     fetchEvents()
-    fetchArticles()
-    fetchRequests()
     .then(
         () => 
     {
