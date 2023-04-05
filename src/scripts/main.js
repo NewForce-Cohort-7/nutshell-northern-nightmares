@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 import { fetchArticles } from "./DataAccess.js"
 import { Nutshell, Navbar } from "./Nutshell.js"
 import { fetchEvents} from "./DataAccess.js"
+=======
+import { fetchArticles, fetchEvents, fetchRequests } from "./DataAccess.js"
+import { Nutshell } from "./Nutshell.js"
+
+>>>>>>> main
 
 
 const dashboard = document.querySelector("#dashboard")
@@ -8,6 +14,7 @@ const navbar = document.querySelector("#navbar")
 const render = () => {
     fetchEvents()
     fetchArticles()
+    fetchRequests()
     .then(
         () => 
     {

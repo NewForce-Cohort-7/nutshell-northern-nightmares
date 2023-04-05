@@ -35,77 +35,76 @@ export const deleteEvents = (id)=> {
         () => {
             dashboard.dispatchEvent(new CustomEvent("stateChanged"))
         }
-        )
-    }
-    
-    
-    //get exports
-    export const getArticles = () => {
-        return applicationState.articles.map(article => ({...article}))
-    }
-    
-    export const getMessages = () => {
-        return applicationState.messages.map(message => ({...message}))
-    }
+    )
+}
 
-    export const getEvents = () => {
-        return applicationState.events.map(event => ({
-            ...event}))
-    }
+
+//get exports
+export const getArticles = () => {
+    return applicationState.articles.map(article => ({...article}))
+}
+
+export const getMessages = () => {
+    return applicationState.messages.map(message => ({...message}))
+}
+
+export const getTasks = () => {
+    return applicationState.tasks.map(task => ({...task}))
+}
     
-    export const getReadArticles = (state) => {
+export const getReadArticles = (state) => {
         
-        //sort readArticles based on dates read
-        const sortedReadArticles = state.readArticles.map(readArticle =>({...readArticle})).sort((a, b) => a.date_read - b.date_read)
+    //sort readArticles based on dates read
+    const sortedReadArticles = state.readArticles.map(readArticle =>({...readArticle})).sort((a, b) => a.date_read - b.date_read)
         
-        //map the current articles
-        const articles = state.articles.map(article => ({...article}))
+    //map the current articles
+    const articles = state.articles.map(article => ({...article}))
         
-        //filter and match the current articles witht he read articles based on ids
-        const readArticles = sortedReadArticles.filter(singleReadArticle => { return articles.some(singleArticle => singleArticle.id === singleReadArticle.articleId)})
+    //filter and match the current articles witht he read articles based on ids
+    const readArticles = sortedReadArticles.filter(singleReadArticle => { return articles.some(singleArticle => singleArticle.id === singleReadArticle.articleId)})
         
-        //return filtered list of read articles
-        return readArticles
-    }
+    //return filtered list of read articles
+    return readArticles
+}
     
-    export const getState = () => {
-        return ({...applicationState})
-    }
+export const getState = () => {
+    return ({...applicationState})
+}
     
-    //fetch exports
-    export const fetchArticles = () => {
-        return fetch(`${API}/articles`)
-        .then(response => response.json())
-        .then(
-            (data) => {
-                // Store the external state in application state
-                applicationState.articles = data
-            }
-            )
+//fetch exports
+export const fetchArticles = () => {
+    return fetch(`${API}/articles`)
+    .then(response => response.json())
+    .then(
+        (data) => {
+            // Store the external state in application state
+            applicationState.articles = data
         }
+    )    
+}
         
         
         
-    export const fetchMessages = () => {
-        return fetch(`${API}/messages`)
+export const fetchMessages = () => {
+    return fetch(`${API}/messages`)
+    .then(response => response.json())
+    .then(
+        (data) => {
+            // Store the external state in application state
+            applicationState.messages = data
+        }
+    )
+}
+            
+export const fetchEvents = () => {
+    return fetch(`${API}/events`)
         .then(response => response.json())
         .then(
             (data) => {
-                    // Store the external state in application state
-                    applicationState.messages = data
-                }
-                )
+                applicationState.events = data
             }
-            
-    export const fetchEvents = () => {
-        return fetch(`${API}/events`)
-            .then(response => response.json())
-            .then(
-                (data) => {
-                    applicationState.events = data
-                    }
-                    )
-                }
+        )
+}
                         
                       
             
@@ -202,6 +201,47 @@ export const deleteMessage = (id) => {
         .then(
             () => {
                 dashboard.dispatchEvent(new CustomEvent("stateChanged"))
+            }
+        )
+}
+
+
+
+export const sendTask = (taskToComplete) => {
+    const fetchOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(taskToComplete)
+    }
+
+
+    return fetch(`${API}/tasks`, fetchOptions)
+        .then(response => response.json())
+        .then(() => {
+            dashboard.dispatchEvent(new CustomEvent("stateChanged"))
+
+        })
+}
+
+
+export const deleteTask = (id) => {
+    return fetch(`${API}/tasks/${id}`, { method: "DELETE" })
+        .then(
+            () => {
+                dashboard.dispatchEvent(new CustomEvent("stateChanged"))
+            }
+        )
+}
+
+export const fetchRequests = () => {
+    return fetch(`${API}/tasks`)
+        .then(response => response.json())
+        .then(
+            (serviceRequests) => {
+                // Store the external state in application state
+                applicationState.tasks = serviceRequests
             }
         )
 }
