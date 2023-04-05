@@ -56,17 +56,5 @@ export const Nutshell = () => {
       ${Articles()}
       </section>
       `
-      </section>
-      
-      <h1>Messages Tester</h1>
-      <section class="messageForm"
-      ${buttonForForm()}
-      ${articleForm()}
-      </section>
-      <section class="currentMessages">
-      ${Messages()}
-      </section>`
-      
-  
       // Render all your UI components here
 }
