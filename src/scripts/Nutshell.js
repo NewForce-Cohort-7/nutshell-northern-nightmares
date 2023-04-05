@@ -10,9 +10,9 @@ export const Navbar = () => {
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Home</a>
-        <a class="navbar-link" href="#">Tasks</a>
-        <a class="navbar-link" href="#">Events</a>
-        <a class="navbar-link" href="#">Forum</a>
+        <a class="navbar-link" href="tasks.html">Tasks</a>
+        <a class="navbar-link" href="events.html">Events</a>
+        <a class="navbar-link" href="chat.html">Forum</a>
       </div>
     </nav>
       `
