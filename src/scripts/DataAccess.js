@@ -131,14 +131,7 @@ export const getCompletions = () => {
     }))
 }
 
-
-
-    
-
-   
-
-
-export const sendMessage = (newUserMessage) => {
+    export const sendMessages = (newUserMessage) => {
     const fetchOptions = {
         method: "POST",
         headers: {
