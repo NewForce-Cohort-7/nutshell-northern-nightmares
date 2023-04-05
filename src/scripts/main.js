@@ -1,6 +1,5 @@
 import { fetchArticles, fetchEvents, fetchRequests } from "./DataAccess.js"
 import { Nutshell, Navbar } from "./Nutshell.js"
-import { fetchEvents} from "./DataAccess.js"
 
 
 const dashboard = document.querySelector("#dashboard")

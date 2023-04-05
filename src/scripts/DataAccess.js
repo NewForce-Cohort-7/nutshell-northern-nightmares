@@ -44,6 +44,10 @@ export const getArticles = () => {
     return applicationState.articles.map(article => ({...article}))
 }
 
+export const getEvents = () => {
+    return applicationState.events.map(event => ({...event}))
+}
+
 export const getMessages = () => {
     return applicationState.messages.map(message => ({...message}))
 }
