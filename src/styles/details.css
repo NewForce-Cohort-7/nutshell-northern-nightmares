@@ -1,8 +1,8 @@
-article {
+/*article {
     line-height: 0.2;
     margin-left: 1rem;
     font-size: large;
-}
+} */
 
 button {
     
@@ -15,7 +15,7 @@ button {
     font-weight: bold;
     color: rgb(245, 245, 245);
     font-size: larger;
-}
+} 
 
 .options {
     flex-basis: 24%;

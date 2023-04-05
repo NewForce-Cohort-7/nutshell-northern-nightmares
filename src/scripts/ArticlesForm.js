@@ -50,7 +50,8 @@ dashboard.addEventListener("click", clickEvent => {
         const dataToSendToAPI = {
             title: userTitle,
             synopsis: userSynopsis,
-            url: userURL
+            url: userURL,
+            timestamp: new Date()
         }
 
         // Send the data to the API for permanent storage
