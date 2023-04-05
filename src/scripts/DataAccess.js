@@ -62,6 +62,10 @@ export const getMessages = () => {
     return applicationState.messages.map(message => ({...message}))
 }
 
+export const getTasks = () => {
+    return applicationState.tasks.map(task => ({...task}))
+}
+
 export const getReadArticles = (state) => {
     
     //sort readArticles based on dates read

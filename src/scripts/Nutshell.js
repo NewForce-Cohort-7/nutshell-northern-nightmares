@@ -1,6 +1,9 @@
 import {eventForm,Events} from "./Events.js"
 import { articleForm, buttonForForm} from "./ArticlesForm.js"
 import { Articles } from "./Articles.js"
+import { Tasks } from "./tasks.js"
+import { taskForm } from "./TasksForm.js"
+
 export const Nutshell = () => {
       return `
       <h1>Nutshell</h1>
@@ -9,10 +12,20 @@ export const Nutshell = () => {
       </section>
       
 
-      <section class="Events">
+      <section class="Tasks">
         <h2>Events</h2>
         ${Events()}
     </section>
+
+    <section class="taskForm">
+    ${taskForm()}
+    </section>
+    
+
+    <section class="Tasks">
+      <h2>Tasks</h2>
+      ${Tasks()}
+  </section>
 
       <h1>Article Tester</h1>
       <section class="articleForm"
