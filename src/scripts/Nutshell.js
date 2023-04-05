@@ -6,6 +6,18 @@ import { Tasks } from "./Tasks.js"
 import { taskForm } from "./TasksForm.js"
 import { Messages } from "./Messages.js"
 
+export const Navbar = () => {
+      return `
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Home</a>
+        <a class="navbar-link" href="#">Tasks</a>
+        <a class="navbar-link" href="#">Events</a>
+        <a class="navbar-link" href="#">Forum</a>
+      </div>
+    </nav>
+      `
+}
 export const Nutshell = () => {
       return `
       <h1>Event Lister</h1>
@@ -30,6 +42,11 @@ export const Nutshell = () => {
       ${Tasks()}
   </section>
 
+  <section class="Tasks">
+  <h2>Tasks</h2>
+  ${Messages()}
+</section>
+
       <h1>Article Tester</h1>
       <section class="articleForm"
       ${buttonForForm()}
@@ -37,6 +54,8 @@ export const Nutshell = () => {
       </section>
       <section class="currentArticles">
       ${Articles()}
+      </section>
+      `
       </section>
       
       <h1>Messages Tester</h1>
