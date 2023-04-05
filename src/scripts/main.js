@@ -9,7 +9,7 @@ const render = () => {
     fetchEvents()
     fetchArticles()
     fetchRequests()
-    fetchMessages
+    fetchMessages()
     .then(
         () => 
     {
