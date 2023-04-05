@@ -1,16 +1,17 @@
-import { fetchArticles, fetchEvents, fetchRequests } from "./DataAccess.js"
-import { Nutshell, Navbar } from "./Nutshell.js"
+import { fetchArticles } from "./DataAccess.js"
+import { Nutshell } from "./Nutshell.js"
+import { fetchEvents} from "./DataAccess.js"
 
 
 const dashboard = document.querySelector("#dashboard")
-const navbar = document.querySelector("#navbar")
+
 const render = () => {
     fetchEvents()
+    fetchArticles()
     .then(
         () => 
     {
-            dashboard.innerHTML = Nutshell()
-            navbar.innerHTML = Navbar()
+            dashboard.innerHTML = ""
             
         }
     )
