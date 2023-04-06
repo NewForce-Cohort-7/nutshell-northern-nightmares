@@ -2,15 +2,15 @@ import { sendArticle } from "./DataAccess.js";
 const dashboard = document.querySelector("#dashboard")
 
 //
-export const buttonForForm =() => {
-    let html = `
-    <div>
-    <button id="newArticle">New Article</button>
-    </div>
-    `
-    return html
+// export const buttonForForm =() => {
+//     let html = `
+//     <div>
+//     <button id="newArticle">New Article</button>
+//     </div>
+//     `
+//     return html
       
-}
+// }
 export const articleForm = () => {
     let html =`
     <div id="completeArticleForm" style = "display: none;">

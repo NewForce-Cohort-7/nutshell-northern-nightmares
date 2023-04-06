@@ -3,15 +3,15 @@ import { sendTask } from "./DataAccess.js";
 const dashboard = document.querySelector("#dashboard")
 
 
-export const buttonForTask =() => {
-    let html = `
-    <div>
-    <button id="newTask">New Task</button>
-    </div>
-    `
-    return html
+// export const buttonForTask =() => {
+//     let html = `
+//     <div>
+//     <button id="newTask">New Task</button>
+//     </div>
+//     `
+//     return html
       
-}
+// }
 
 
 
