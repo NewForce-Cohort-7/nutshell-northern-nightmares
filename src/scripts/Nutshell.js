@@ -3,7 +3,7 @@ import { eventsForm,buttonForEvent } from "./EventsForm.js"
 import { articleForm, buttonForForm} from "./ArticlesForm.js"
 import { Articles } from "./Articles.js"
 import { Tasks } from "./Tasks.js"
-import { taskForm } from "./TasksForm.js"
+import { taskForm, buttonForTask } from "./TasksForm.js"
 import { Messages } from "./Messages.js"
 
 export const Navbar = () => {
@@ -33,6 +33,7 @@ export const Nutshell = () => {
     </section>
 
     <section class="taskForm">
+    ${buttonForTask()}
     ${taskForm()}
     </section>
     
