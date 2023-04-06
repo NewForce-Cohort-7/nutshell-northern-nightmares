@@ -2,15 +2,15 @@ import { sendEvents } from "./DataAccess.js";
 const dashboard = document.querySelector("#dashboard")
  
 
-export const buttonForEvent =() => {
-    let html = `
-    <div>
-    <button id="newEvent">New Event</button>
-    </div>
-    `
-    return html
+// export const buttonForEvent =() => {
+//     let html = `
+//     <div>
+//     <button id="newEvent">New Event</button>
+//     </div>
+//     `
+//     return html
       
-}
+// }
 
 export const eventsForm =  () => {
     let html = `
