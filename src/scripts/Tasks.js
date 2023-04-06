@@ -1,5 +1,7 @@
 import {deleteTask, getTasks } from "./DataAccess.js"
+
 const dashboard = document.querySelector("#dashboard")
+
  dashboard.addEventListener("click", click => {
         if (click.target.id.startsWith("task--")) {
             const [,taskId] = click.target.id.split("--")
