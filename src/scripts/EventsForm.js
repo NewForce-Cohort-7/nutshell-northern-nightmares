@@ -1,16 +1,6 @@
 import { sendEvents } from "./DataAccess.js";
-const dashboard = document.querySelector("#dashboard")
- 
 
-// export const buttonForEvent =() => {
-//     let html = `
-//     <div>
-//     <button id="newEvent">New Event</button>
-//     </div>
-//     `
-//     return html
-      
-// }
+const dashboard = document.querySelector("#dashboard")
 
 export const eventsForm =  () => {
     let html = `
@@ -30,7 +20,7 @@ export const eventsForm =  () => {
     <input type="text" name="eventLocation" class="input"/>
     </div>
 
-<div class ="savebutton>
+<div class = savebutton>
 <button class="button" id="createEvent">Create New Event</button>
 </div>
 </div>

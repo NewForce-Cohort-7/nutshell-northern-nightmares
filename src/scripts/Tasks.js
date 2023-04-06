@@ -35,6 +35,7 @@ const dashboard = document.querySelector("#dashboard")
             return `<li class="taskDone">
             <div class="card mb-2">
             <div class="card-header">
+            ${taskObject.date}
             <button class="task__delete" id="task--${taskObject.id}">-
             Delete
             </button>
