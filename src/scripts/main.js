@@ -1,12 +1,18 @@
-import { Nutshell } from "./Nutshell.js"
-
+import { fetchArticles, fetchEvents, fetchMessages, fetchRequests } from "./DataAccess.js"
+import { Nutshell, Navbar } from "./Nutshell.js"
 
 const dashboard = document.querySelector("#dashboard")
-
+const navbar = document.querySelector("#navbar")
 const render = () => {
+    fetchEvents()
+    fetchArticles()
     fetchRequests()
-    .then(() => {
+    fetchMessages()
+    .then(
+        () => 
+    {
             dashboard.innerHTML = Nutshell()
+            navbar.innerHTML = Navbar()
             
         }
     )
@@ -14,3 +20,9 @@ const render = () => {
 
 render()
 
+dashboard.addEventListener(
+    "stateChanged",
+    customEvent => {
+        render()
+    }
+)
