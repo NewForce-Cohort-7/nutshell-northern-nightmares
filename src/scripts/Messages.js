@@ -15,7 +15,7 @@ export const buttonForEvent =() => {
 export const Messages = () => {
 const messages = getMessages()
 
-return `<h3>Chat</h3>
+return `
         <div id="message-list">
             ${messages.map(message => {
                 return `<div class="message-container">

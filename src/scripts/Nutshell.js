@@ -21,47 +21,47 @@ export const Navbar = () => {
 }
 export const Nutshell = () => {
       return `
-      <h1>Event Lister</h1>
+
+      <h1>Events!</h1>
       <section class="eventForm">
       ${buttonForEvent()}
       ${eventsForm()}
       </section>
-      
-
-      <section class="Tasks">
-        <h2>Events</h2>
+      <section class="Events">
+        <h2>Event List</h2>
         ${Events()}
     </section>
-
+    
+    <h1>Tasks!</h1>
     <section class="taskForm">
     ${buttonForTask()}
     ${taskForm()}
     </section>
-    
-
     <section class="Tasks">
-      <h2>Tasks</h2>
+      <h2>Task List</h2>
       ${Tasks()}
   </section>
 
-  <h1>Article Tester</h1>
-  <section class="articleForm"
+  <h1>Chat!</h1>
+  <section class="messageForm"
   ${buttonForMessages()}
   ${messagesForm()}
   </section>
-  <section class="currentArticles">
-  ${Messages()}
+  <section class="currentMessages">
+    <h2>Chatroom</h2>
+    ${Messages()}
+    </section>
+
+
+  <h1>Articles!</h1>
+  <section class="articleForm"
+  ${buttonForForm()}
+  ${articleForm()}
   </section>
-
-
-      <h1>Article Tester</h1>
-      <section class="articleForm"
-      ${buttonForForm()}
-      ${articleForm()}
-      </section>
-      <section class="currentArticles">
-      ${Articles()}
-      </section>
-      `
+  <h1>Posted Articles</h1>
+  <section class="currentArticles">
+  ${Articles()}
+  </section>
+  `
       // Render all your UI components here
 }
