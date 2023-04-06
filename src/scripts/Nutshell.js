@@ -20,41 +20,78 @@ export const Navbar = () => {
 }
 export const Nutshell = () => {
       return `
-      <h1>Event Lister</h1>
-      <section class="eventForm">
-      ${buttonForEvent()}
-      ${eventsForm()}
-      </section>
+      <div class="row"
       
+            <!--(---------Task Section-----------)-->
+            <div class="column" id="task-col">
+                  <div class="upper-header">
+                       <h2>Tasks</h2>
+                  </div>
 
-      <section class="Tasks">
-        <h2>Events</h2>
-        ${Events()}
-    </section>
+                  <section class="taskForm">
+                  ${taskForm()}
+                  </section>
+      
+      
+                  <section class="Tasks">
+                  ${Tasks()}
+                  </section>
+      
+            </div>
 
-    <section class="taskForm">
-    ${taskForm()}
-    </section>
-    
 
-    <section class="Tasks">
-      <h2>Tasks</h2>
-      ${Tasks()}
-  </section>
+            <!--(---------Article Section-----------)-->
+            <div class="column" id="article-col">
+            <!--(---------Forum Section-----------)-->
+            <div class="column" id="forum-col">
+                  <div class="upper-header">
+                        <h2>Forum</h2>
+                  </div>
 
-  <section class="Tasks">
-  <h2>Tasks</h2>
-  ${Messages()}
-</section>
+                  <section class="Tasks">
+                  ${Messages()}
+                  </section>
+            </div>
 
-      <h1>Article Tester</h1>
-      <section class="articleForm"
-      ${buttonForForm()}
-      ${articleForm()}
-      </section>
-      <section class="currentArticles">
-      ${Articles()}
-      </section>
-      `
+            
+                  <div class="upper-header">
+                      <h1>Articles</h1>
+                  </div>
+            
+                  <section class="articleForm"
+                  ${buttonForForm()}
+                  ${articleForm()}
+                  </section>
+            
+                  <section class="currentArticles">
+                  ${Articles()}
+                  </section>
+            </div>
+
+
+      </div>
+
+      <div class="row">
+
+      <!--(---------Events Section-----------)-->
+            <div class="column" id="task-col">      
+                  <div class="lower-header">
+                        <h2>Events</h2>
+                  </div>
+
+                  <section class="eventForm">
+                  ${buttonForEvent()}
+                  ${eventsForm()}
+                  </section>
+      
+                  <section class="events">
+                  <div class="subheading">
+                        <h5>Upcoming Events</h5>
+                  </div>
+                  ${Events()}
+                  </section>
+            </div>
+      </div>
+            `
       // Render all your UI components here
 }

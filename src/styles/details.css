@@ -1,8 +1,8 @@
-article {
+/*article {
     line-height: 0.2;
     margin-left: 1rem;
     font-size: large;
-} 
+} */
 
 button {
     
@@ -17,13 +17,17 @@ button {
     font-size: larger;
 } 
 
-.options {
-    flex-basis: 24%;
-    margin: 0 2rem;
-    border: 1px dashed dodgerblue;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    box-shadow: 0.25rem 0.25rem 0.5rem rgb(143, 143, 143);
+.column {
+    float: left;
+    width: 30%;
+    border: 1px solid black;
+    column-gap: 5px;
+}
+  
+  /* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
- 

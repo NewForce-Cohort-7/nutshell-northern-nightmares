@@ -18,7 +18,7 @@ return `<h3>Chat</h3>
         </div>
         <div id="new-message-container">
             <label class="label" for="purpose"><h3>New Message</h3></label>
-            <textarea id="new-message-input" name="new-message-input" rows="10" cols="50"></textarea>
+            <textarea id="new-message-input" name="new-message-input" rows="4" cols="35"></textarea>
             <label class="label" for="name"><h3>User Name</h3></label>
             <input type="text" id="new-message-username" class="input"></input>
             <button class="button" id="new-message-save-button">Send</button>
