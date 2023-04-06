@@ -4,22 +4,13 @@ import { getEvents,deleteEvents } from "./DataAccess.js"
 const dashboard = document.querySelector("#dashboard")
    const convertEventToListElement = (eventObject) => {
             return `<li>
-            <div class="card mb-2">
-            <div class="card-header">
-            ${eventObject.date}
+
+          ${eventObject.name}/${eventObject.date}/
+           ${eventObject.location}
             <button class="event__delete" id="event--${eventObject.id}">-
             Delete
             </button>
-            </div>
-            <div class="card-body">
-            <blockquote class="blockquote mb-0">
-                <p>
-                    ${eventObject.name}
-                </p>
-                <footer class="blockquote-footer">${eventObject.location}</footer>
-              </blockquote>
-            </div>
-          </div>
+       
     </li>`
     }
 

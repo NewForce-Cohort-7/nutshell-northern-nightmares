@@ -1,17 +1,6 @@
 import { sendMessages } from "./DataAccess.js";
 const dashboard = document.querySelector("#dashboard")
  
-
-export const buttonForMessages =() => {
-    let html = `
-    <div>
-    <button id="newMessage">New Message</button>
-    </div>
-    `
-    return html
-      
-}
-
 export const messagesForm =  () => {
     let html = `
     <div id="completeMessagesForm" style = "display: none;">
@@ -25,7 +14,7 @@ export const messagesForm =  () => {
     <textarea name="messageContent" class="input" rows="4" cols="50"/></textarea>
     </div>
 
-<div class ="savebutton>
+<div class = savebutton>
 <button class="button" id="saveMessage">Save Message</button>
 </div>
 </div>
