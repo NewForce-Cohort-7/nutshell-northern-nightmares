@@ -27,10 +27,20 @@ const convertArticleToListElement = (article) => {
  
         return `
         <li>
-        <a href=${article.url}>${article.title}</a>
-        ${article.synopsis}
-       
+        <div class="card mb-2">
+        <div class="card-header">
+        ${article.title}
         <button class="article__delete" id="article--${article.id}">Delete</button>
+        </div>
+        <div class="card-body">
+        <blockquote class="blockquote mb-0">
+            <p>
+                ${article.synopsis}
+            </p>
+            <footer class="blockquote-footer"><a href=${article.url}>Learn More</a></footer>
+          </blockquote>
+        </div>
+      </div>
         </li>
         `
     }

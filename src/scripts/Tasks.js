@@ -33,10 +33,21 @@ const dashboard = document.querySelector("#dashboard")
     // )
     const convertTaskToListElement = (taskObject) => {
             return `<li class="taskDone">
-            <a>${taskObject.event} </a>
+            <div class="card mb-2">
+            <div class="card-header">
             <button class="task__delete" id="task--${taskObject.id}">-
             Delete
             </button>
+            </div>
+            <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <p>
+                ${taskObject.event}
+                </p>
+              </blockquote>
+            </div>
+          </div>
+           
     </li>`
     }
         export const Tasks = () => {

@@ -1,11 +1,11 @@
 import {Events} from "./Events.js"
-import { eventsForm,buttonForEvent } from "./EventsForm.js"
-import { articleForm, buttonForForm} from "./ArticlesForm.js"
+import { eventsForm } from "./EventsForm.js"
+import { articleForm } from "./ArticlesForm.js"
 import { Articles } from "./Articles.js"
 import { Tasks } from "./Tasks.js"
-import { taskForm, buttonForTask } from "./TasksForm.js"
+import { taskForm} from "./TasksForm.js"
 import { Messages } from "./Messages.js"
-import { messagesForm, buttonForMessages } from "./MessagesForm.js"
+import { messagesForm} from "./MessagesForm.js"
 
 export const Navbar = () => {
       return `
@@ -21,88 +21,130 @@ export const Navbar = () => {
 }
 export const Nutshell = () => {
       return `
-      <div class="row"
-      
-            <!--(---------Task Section-----------)-->
-            <div class="column" id="task-col">
-                  <div class="upper-header">
-                       <h2>Tasks</h2>
-                  </div>
+  <body class="p-3 m-0 border-0 bd-example">
+    <header class="navbar">
 
-                  <section class="taskForm">
-                  ${taskForm()}
-                  </section>
-      
-      
-                  <section class="Tasks">
-                  ${Tasks()}
-                  </section>
-      
-            </div>
+    </header>
+    <!-- Example Code -->
+    <!-- Upper Row Code -->
+<div class="container-1">
+  <div class="row">
+    <!-- 3 Column Code -->
+    <div class="col-md">
+      <div class="card mb-3">
+        <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-1">
+          <a class="navbar-brand">Tasks</a>
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link" href="#scrollspyHeading1"><button id="newTask">New Task</button></a>
+            </li>
+          </ul>
+        </nav>
+        <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+         
+        <section class="taskForm">
+        ${taskForm()}
+        </section>
 
-    <section class="taskForm">
-    ${buttonForTask()}
-    ${taskForm()}
-    </section>
-    
-
-            <!--(---------Article Section-----------)-->
-            <div class="column" id="article-col">
-            <!--(---------Forum Section-----------)-->
-            <div class="column" id="forum-col">
-                  <div class="upper-header">
-                        <h2>Forum</h2>
-                  </div>
-
-  <h1>Article Tester</h1>
-  <section class="articleForm"
-  ${buttonForMessages()}
-  ${messagesForm()}
-  </section>
-  <section class="currentArticles">
-  ${Messages()}
-  </section>
-
-
-            
-                  <div class="upper-header">
-                      <h1>Articles</h1>
-                  </div>
-            
-                  <section class="articleForm"
-                  ${buttonForForm()}
-                  ${articleForm()}
-                  </section>
-            
-                  <section class="currentArticles">
-                  ${Articles()}
-                  </section>
-            </div>
-
-
+        <section class="Tasks">
+        ${Tasks()}
+        </section>
+         
+        </div>
       </div>
+    </div>
 
-      <div class="row">
+    <div class="col-md">
+      <div class="card mb-3">
+        <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-1">
+          <a class="navbar-brand">Events</a>
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link" href="#scrollspyHeading1"><button id="newEvent">New Event</button></a>
+            </li>
+          </ul>
+        </nav>
+        <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+          
+        <section class="eventForm">
+        ${eventsForm()}
+        </section>
 
-      <!--(---------Events Section-----------)-->
-            <div class="column" id="task-col">      
-                  <div class="lower-header">
-                        <h2>Events</h2>
-                  </div>
-
-                  <section class="eventForm">
-                  ${buttonForEvent()}
-                  ${eventsForm()}
-                  </section>
-      
-                  <section class="events">
-                  <div class="subheading">
-                        <h5>Upcoming Events</h5>
-                  </div>
-                  ${Events()}
-                  </section>
-            </div>
+        <section class="events">
+        ${Events()}
+        </section>
+          
+        </div>
       </div>
+    </div>
+
+    <div class="col-md">
+      <div class="card mb-3">
+        <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-1">
+          <a class="navbar-brand">Forum</a>
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link" href="#scrollspyHeading1"><button id="newMessage">New Message</button></a>
+            </li>
+          </ul>
+        </nav>
+        <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+
+        <section class="articleForm"
+        ${messagesForm()}
+        </section>
+
+        <section class="currentMessages">
+        ${Messages()}
+        </section>
+
+        </div>
+     </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-2">
+  <div class="d-grid gap-5 d-md-flex justify-content-md-center">
+    <button type="button" class="btn btn-outline-success">Success</button>
+    <button type="button" class="btn btn-outline-warning">Warning</button>
+    <button type="button" class="btn btn-danger">Danger</button>
+    <button type="button" class="btn btn-outline-warning">Warning</button>
+    <button type="button" class="btn btn-outline-success">Success</button>
+  </div>
+</div>
+
+<div class="container-3">
+  <div class="row">
+    <!-- 3 Column Code -->
+    <div class="col-md">
+      <div class="card mt-3 mb-">
+        <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-1">
+          <a class="navbar-brand">Articles</a>
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link" href="#scrollspyHeading1"><button id="newArticle">New Article</button></a>
+            </li>
+          </ul>
+        </nav>
+        <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+         
+        <section class="articleForm"
+        ${articleForm()}
+        </section>
+  
+        <section class="currentArticles">
+        ${Articles()}
+        </section>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- End Example Code -->
+  </body>
+
             `
       // Render all your UI components here
 }
