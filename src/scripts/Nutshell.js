@@ -5,6 +5,7 @@ import { Articles } from "./Articles.js"
 import { Tasks } from "./Tasks.js"
 import { taskForm, buttonForTask } from "./TasksForm.js"
 import { Messages } from "./Messages.js"
+import { messagesForm, buttonForMessages } from "./MessagesForm.js"
 
 export const Navbar = () => {
       return `
@@ -43,10 +44,15 @@ export const Nutshell = () => {
       ${Tasks()}
   </section>
 
-  <section class="Tasks">
-  <h2>Tasks</h2>
+  <h1>Article Tester</h1>
+  <section class="articleForm"
+  ${buttonForMessages()}
+  ${messagesForm()}
+  </section>
+  <section class="currentArticles">
   ${Messages()}
-</section>
+  </section>
+
 
       <h1>Article Tester</h1>
       <section class="articleForm"
